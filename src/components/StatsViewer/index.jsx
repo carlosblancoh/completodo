@@ -221,7 +221,7 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
                                 >
                                     <div
                                         style={{
-                                            width: value.overdueTasksP * 100 + '%',
+                                            width: value.archived * 100 + '%',
                                             height: '1rem',
                                             backgroundColor: value.color,
                                             borderRadius: '1rem 0 0 1rem',
