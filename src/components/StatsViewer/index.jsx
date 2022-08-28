@@ -66,6 +66,7 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
                                         margin: '-1rem 1rem 0 1.5rem',
                                         border: '0.05rem solid rgba(112, 112, 112, 0.5)',
                                         borderRadius: '1rem',
+                                        overflow: 'hidden',
                                     }}
                                 >
                                     <div
@@ -96,6 +97,7 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
                                         margin: '-1rem 1rem 0 1.5rem',
                                         border: '0.05rem solid rgba(112, 112, 112, 0.5)',
                                         borderRadius: '1rem',
+                                        overflow: 'hidden',
                                     }}
                                 >
                                     <div
@@ -126,6 +128,7 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
                                         margin: '-1rem 1rem 0 1.5rem',
                                         border: '0.05rem solid rgba(112, 112, 112, 0.5)',
                                         borderRadius: '1rem',
+                                        overflow: 'hidden',
                                     }}
                                 >
                                     <div
@@ -172,6 +175,7 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
                                         margin: '-1rem 1rem 0 1.5rem',
                                         border: '0.05rem solid rgba(112, 112, 112, 0.5)',
                                         borderRadius: '1rem',
+                                        overflow: 'hidden',
                                     }}
                                 >
                                     <div
@@ -212,6 +216,7 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
                                         margin: '-1rem 1rem 0 1.5rem',
                                         border: '0.05rem solid rgba(112, 112, 112, 0.5)',
                                         borderRadius: '1rem',
+                                        overflow: 'hidden',
                                     }}
                                 >
                                     <div
