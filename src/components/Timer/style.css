@@ -1,0 +1,21 @@
+.component-timer-hide {
+    transition: all 0.5s;
+    opacity: 1;
+    transform: rotateY(90deg);
+}
+
+.component-timer-show {
+    animation: component-timer-show-anim 0.5s;
+}
+
+@keyframes component-timer-show-anim {
+    0% {
+        opacity: 1;
+        transform: rotateY(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}

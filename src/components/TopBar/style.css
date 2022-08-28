@@ -1,0 +1,96 @@
+.component-topBar {
+    width: calc(100% - 1rem);
+    min-height: 4rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    margin: 0;
+    max-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+@media (max-width: 799px) {
+    .component-topBar-left,
+    .component-topBar-right {
+        padding: 0 0.5rem !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-topBar:not(.component-topBar-noBackground) {
+        width: 1600px;
+        padding: 0 calc((100% - 1600px) / 2);
+    }
+}
+
+@media (min-width: 1900px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-topBar:not(.component-topBar-noBackground) {
+        width: 1900px;
+        padding: 0 calc((100% - 1900px) / 2);
+    }
+}
+
+
+.component-topBar.component-topBar-onGlass {
+    border-bottom: 0.03rem solid rgba(112, 112, 112, 0.5);
+    background: rgba(239, 239, 239, 0.32);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+}
+
+.component-topBar-title {
+    flex-grow: 1;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    min-width: 1rem;
+}
+
+.component-topBar-left + .component-topBar-title {
+    margin-left: 0;
+}
+
+.component-topBar-left,
+.component-topBar-right {
+    min-width: 1rem;
+    padding: 0 1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-topBar-right {
+    margin-left: auto;
+}
+
+.component-topBar-right ~ .component-topBar-right {
+    margin-left: 0;
+}
+
+.component-topBar-title > h1 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0.25rem;
+    padding: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.component-topBar-title > span {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-top: -0.25rem;
+    opacity: 0.6;
+}

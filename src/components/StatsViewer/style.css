@@ -1,0 +1,15 @@
+.statsSizeLimitter {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 800px goes here*/
+    .statsSizeLimitter {
+        max-width: calc(800px - 1rem);
+        margin: 0.5rem auto;
+    }
+}
+
+.component-StatsViewer-Popup {
+    z-index: 150;
+}

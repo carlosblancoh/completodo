@@ -1,0 +1,100 @@
+.component-blurredOverlay-popup {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(239, 239, 239, 0.64);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 100;
+}
+
+.component-blurredOverlay-fullscreenConfirmation {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.64);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 200;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.component-blurredOverlay-popup-visible > *
+{
+    animation: component-blurredOverlay-fall 1s;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-visible > *
+{
+    animation: component-blurredOverlay-rise 1s;
+}
+
+.component-blurredOverlay-popup-visible {
+    animation: component-blurredOverlay-fade-in 1s;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-visible {
+    animation: component-blurredOverlay-fade-in 1s;
+}
+
+.component-blurredOverlay-popup-hidden {
+    animation: component-blurredOverlay-fade-in 1s reverse;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-hidden {
+    animation: component-blurredOverlay-fade-in 1s reverse;
+}
+
+.component-blurredOverlay-popup-hidden > *
+{
+    animation: component-blurredOverlay-fall 1s reverse;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-hidden > *
+{
+    animation: component-blurredOverlay-rise 1s reverse;
+}
+
+@keyframes component-blurredOverlay-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes component-blurredOverlay-fall {
+    from {
+        transform: translateY(-100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes component-blurredOverlay-rise {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

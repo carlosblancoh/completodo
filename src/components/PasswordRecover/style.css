@@ -1,0 +1,14 @@
+.errorMessage {
+    font-size: 0.9rem;
+    color: #ff3b30;
+    text-align: center;
+}
+
+.sizeLimitter {
+    min-width: 360px;
+    width: 480px;
+}
+
+.component-PasswordRecover-Popup {
+    z-index: 150;
+}
