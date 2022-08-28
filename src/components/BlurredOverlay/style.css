@@ -24,7 +24,7 @@
     -webkit-backdrop-filter: blur(0.2rem);
     backdrop-filter: blur(0.2rem);
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     pointer-events: auto;
     z-index: 200;
