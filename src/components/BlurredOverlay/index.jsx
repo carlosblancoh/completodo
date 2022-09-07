@@ -4,7 +4,9 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import './style.css';
 
-
+/**
+ * Capa con transparencia que cubre la pantalla.
+ */
 export default function BlurredOverlay({visible, children, onClick, variant}) {
     const ref = useRef(null);
     useEffect(() => {
@@ -46,9 +48,21 @@ export default function BlurredOverlay({visible, children, onClick, variant}) {
 }
 
 BlurredOverlay.propTypes = {
+    /**
+    * ¿Debe mostrarse la capa?.
+    */
     visible: PropTypes.bool,
+    /**
+    * Hijos para el contenido sobre la capa.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
+    /**
+    * Tipo de capa.
+    */
     variant: PropTypes.string,
 };
 

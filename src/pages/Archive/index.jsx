@@ -4,7 +4,9 @@ import Icon from '../../components/Icon';
 import TopBar from '../../components/TopBar';
 import ItemController from '../../controllers/ItemController';
 
-
+/**
+* Pantalla de ver archivo.
+*/
 export default function Archive({items, onBack}) {
     const listItems = [];
 
@@ -39,7 +41,13 @@ export default function Archive({items, onBack}) {
 }
 
 Archive.propTypes = {
+    /**
+    * Lista de elementos archivados.
+    */
     items: PropTypes.array,
+    /**
+    * Evento llamado al volver a la pantalla anterior.
+    */
     onBack: PropTypes.func,
 };
 

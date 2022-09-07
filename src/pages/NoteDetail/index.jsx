@@ -9,7 +9,10 @@ import TextField from '../../components/TextField';
 import DeleteConfirmation from '../../components/DeleteConfirmation';
 import './style.css';
 
-export default function NoteDetail({value, _onClick, onBack, onChange, parent, parentColor, groupsList, onDelete}) {
+/**
+* Página detalle de nota.
+*/
+export default function NoteDetail({value, onBack, onChange, parent, parentColor, groupsList, onDelete}) {
     const nameOfParent = parent?.title ?? 'Inicio';
     const parentDeadline = parent?.deadline ?? null;
     const parentGroupColor = parentColor;
@@ -329,19 +332,41 @@ export default function NoteDetail({value, _onClick, onBack, onChange, parent, p
 }
 
 NoteDetail.propTypes = {
+    /**
+    * Contenido de la nota.
+    */
     value: PropTypes.object.isRequired,
-    _onClick: PropTypes.func,
+    /**
+    * Evento llamado al volver a la página anterior.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al modificar la nota.
+    */
     onChange: PropTypes.func,
+    /**
+    * Grupo al que pertenece la nota.
+    */
     parent: PropTypes.object,
+    /**
+    * Color del grupo al que pertenece la nota.
+    */
     parentColor: PropTypes.string,
+    /**
+    * Evento llamado al modificar la localización de la nota.
+    */
     onLocationChage: PropTypes.func,
+    /**
+    * Lista general de grupos.
+    */
     groupsList: PropTypes.array,
+    /**
+    * Evento llamado al eliminar la nota.
+    */
     onDelete: PropTypes.func,
 };
 
 NoteDetail.defaultProps = {
-    _onClick: undefined,
     onBack: undefined,
     onChange: undefined,
     parent: undefined,
@@ -351,6 +376,10 @@ NoteDetail.defaultProps = {
     onDelete: undefined,
 };
 
+
+/**
+* Convertir la fecha de Date al formato de firebase.
+*/
 function dateConversion(value) {
     const date = value?.toDate?.() ?? value;
     if (!date) {

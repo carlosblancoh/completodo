@@ -6,7 +6,7 @@ import './style.css';
 
 
 /**
- * Atributos de información de las tareas y grupos.
+ * Atributos y campos de información adicional para los items.
  */
 export default function Attribute({children}) {
     return (
@@ -19,6 +19,9 @@ export default function Attribute({children}) {
 }
 
 Attribute.propTypes = {
+    /**
+    * Hijos para la composición del elemento
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -26,6 +29,9 @@ Attribute.defaultProps = {
     children: undefined,
 };
 
+/**
+ * Nombre del atributo
+ */
 Attribute.Title = function ({title}) {
     return (
         <div
@@ -39,6 +45,9 @@ Attribute.Title = function ({title}) {
 Attribute.Title.displayName = 'Attribute.Title';
 
 Attribute.Title.propTypes = {
+    /**
+    * Nombre del atributo.
+    */
     title: PropTypes.string,
 };
 
@@ -46,6 +55,9 @@ Attribute.Title.defaultProps = {
     title: undefined,
 };
 
+/**
+ * Contenido del atributo.
+ */
 Attribute.Middle = function ({children}) {
     return (
         <div
@@ -59,6 +71,9 @@ Attribute.Middle = function ({children}) {
 Attribute.Middle.displayName = 'Attribute.Middle';
 
 Attribute.Middle.propTypes = {
+    /**
+    * Hijos para el contenido del atributo.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -66,6 +81,9 @@ Attribute.Middle.defaultProps = {
     children: undefined,
 };
 
+/**
+ * Contenido auxiliar del atributo.
+ */
 Attribute.Right = function ({children, onClick : onClickEvent}) {
     function onClick(event) {
         if (onClickEvent) {
@@ -87,7 +105,13 @@ Attribute.Right = function ({children, onClick : onClickEvent}) {
 Attribute.Right.displayName = 'Attribute.Right';
 
 Attribute.Right.propTypes = {
+    /**
+    * Hijos para el contenido auxiliar del atributo
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 

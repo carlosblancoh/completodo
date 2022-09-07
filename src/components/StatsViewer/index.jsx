@@ -8,7 +8,10 @@ import BlurredOverlay from '../BlurredOverlay';
 import './style.css';
 
 
-export default function StatsViewer({value, _onClick, onCloseStats}) {
+/**
+* Panel de estadísticas.
+*/
+export default function StatsViewer({value, onCloseStats}) {
     const [closed, setClosed] = useState(false);
     let popupTitle = 'Estadísticas';
 
@@ -239,17 +242,23 @@ export default function StatsViewer({value, _onClick, onCloseStats}) {
 }
 
 StatsViewer.propTypes = {
+    /**
+    * Contenido de las estadísticas.
+    */
     value: PropTypes.object.isRequired,
-    _onClick: PropTypes.func,
+    /**
+    * Evento llamado al cerrar el panel.
+    */
     onCloseStats: PropTypes.func,
 };
 
 StatsViewer.defaultProps = {
-    _onClick: undefined,
     onCloseStats: undefined,
 };
 
-
+/**
+* Conversión de formato de tiempo de segundos a hh:mm:ss.
+*/
 function durationWithSecondsConversion(value) {
     const duration = value;
     if (!duration) {

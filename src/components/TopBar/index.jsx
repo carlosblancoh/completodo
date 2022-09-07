@@ -44,8 +44,17 @@ export default function TopBar({children, variant, color}) {
 }
 
 TopBar.propTypes = {
+    /**
+    * Hijos para la composición del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Tipo de barra, sin fondo o con transparencia.
+    */
     variant: PropTypes.oneOf(['noBackground', 'onGlass']),
+    /**
+    * Color de la barra de navegación.
+    */
     color: PropTypes.string,
 };
 
@@ -55,6 +64,9 @@ TopBar.defaultProps = {
     color: undefined,
 };
 
+/**
+* Zona izquierda de la barra.
+*/
 TopBar.Left = function ({children, onClick}) {
     return (
         <div
@@ -69,7 +81,13 @@ TopBar.Left = function ({children, onClick}) {
 TopBar.Left.displayName = 'TopBar.Left';
 
 TopBar.Left.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -78,6 +96,9 @@ TopBar.Left.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Zona derecha de la barra.
+*/
 TopBar.Right = function ({children, onClick : onClickEvent}) {
     function onClick(event) {
         if (onClickEvent) {
@@ -98,7 +119,13 @@ TopBar.Right = function ({children, onClick : onClickEvent}) {
 TopBar.Right.displayName = 'TopBar.Right';
 
 TopBar.Right.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -107,6 +134,9 @@ TopBar.Right.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Zona para el título de la barra.
+*/
 TopBar.Title = function ({title, main, back}) {
     return (
         <div
@@ -129,8 +159,17 @@ TopBar.Title = function ({title, main, back}) {
 TopBar.Title.displayName = 'TopBar.Title';
 
 TopBar.Title.propTypes = {
+    /**
+    * Título de la barra.
+    */
     title: PropTypes.string,
+    /**
+    * ¿Es un título principal?
+    */
     main: PropTypes.bool,
+    /**
+    * ¿Es un título asociado a la acción de volver atrás?
+    */
     back: PropTypes.bool,
 };
 
@@ -140,6 +179,9 @@ TopBar.Title.defaultProps = {
     back: undefined,
 };
 
+/**
+* Campo de búsqueda en la barra superior.
+*/
 TopBar.SearchBar = function ({placeholder}) {
     return (
         <TextField
@@ -152,6 +194,9 @@ TopBar.SearchBar = function ({placeholder}) {
 TopBar.SearchBar.displayName = 'TopBar.SearchBar';
 
 TopBar.SearchBar.propTypes = {
+    /**
+    * Texto mostrado en la barra de búsqueda vacía.
+    */
     placeholder: PropTypes.string,
 };
 

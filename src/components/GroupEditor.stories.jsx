@@ -4,6 +4,12 @@ import GroupEditor from './GroupEditor';
 export default {
     title: 'Components/GroupEditor',
     component: GroupEditor,
+    parameters: {
+        docs: {
+            inlineStories: false,
+            iframeHeight: 500,
+        }
+    }
 };
 
 const Template = (args) => <GroupEditor {...args} />;

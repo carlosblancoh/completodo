@@ -6,6 +6,9 @@ import Icon from './Icon';
 import TaskController from '../controllers/TaskController';
 import usePrevious from '../hooks/previous';
 
+/**
+* Evento o bloque de calendario.
+*/
 export default function Block({id, value, onCompleted, onUncompleted, onClick, toDoS, group}) {
     const [expandedContent, setExpandedContent] = useState(true);
     const wasCompleted = usePrevious(value.completed);
@@ -144,12 +147,32 @@ export default function Block({id, value, onCompleted, onUncompleted, onClick, t
 }
 
 Block.propTypes = {
+    /**
+    * Contenido del bloque de calendario.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * Identificador del bloque de calendario.
+    */
     id: PropTypes.string,
+    /**
+    * Evento llamado al completar el bloque de calendario.
+    */
     onCompleted: PropTypes.func,
+    /**
+    * Evento llamado al descompletar el bloque de calendario.
+    */
     onUncompleted: PropTypes.func,
-    onClick: PropTypes.func,
+    /**
+    * Evento llamado al hacer click.
+    */
+    onClick: PropTypes.func,/**
+    * Lista de tareas a realizar durante el bloque de calendario.
+    */
     toDoS: PropTypes.array,
+    /**
+    * Grupo del que recoger tareas durante el bloque de calendario.
+    */
     group: PropTypes.object,
 };
 
@@ -162,6 +185,9 @@ Block.defaultProps = {
     group: undefined,
 };
 
+/**
+* Función para dar formato a la fecha
+*/
 function formatDate(timestamp) {
     const months = [
         'enero',

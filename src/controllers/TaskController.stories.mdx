@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { TaskController } from './TaskController';
+
+<Meta title="Controller/Task Controller" component={TaskController} />
+
+# Task Controller
+
+Controlador encargado de manejar la vista `Task`.
+
+## Props
+- `id`: identificador de la tarea que se quiere mostrar.
+
+## Estado
+- `data`: datos de la tarea.
+- `parentData`: datos del grupo o tarea padre.
+- `stackable`: verdadero si se puede agrupar a otras tareas, falso en caso contrario.
+
+## Métodos
+- `onChange(value)`: modifica la tarea.
+- `onCompleted()`: marca la tarea como completada.
+- `onUncompleted()`: marca la tarea como no completada.
+- `onTimerPlay()`: inicia el contador de tiempo de la tarea.
+- `onTimerPause()`: para el contador de tiempo de la tarea.

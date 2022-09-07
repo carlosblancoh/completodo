@@ -74,12 +74,33 @@ export default function Card({children, variant, color, stackable, pinned, dimme
 }
 
 Card.propTypes = {
+    /**
+    * Hijos para la composición del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Tipo de tarjeta, normal o transparente.
+    */
     variant: PropTypes.oneOf(['plain', 'glass']),
+    /**
+    * Color de la tarjeta.
+    */
     color: PropTypes.string,
+    /**
+    * ¿Se puede acoplar a otras tarjetas?
+    */
     stackable: PropTypes.bool,
+    /**
+    * ¿La tarjeta está fijada?
+    */
     pinned: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    /**
+    * ¿La tarjeta está desactivada?
+    */
     dimmed: PropTypes.bool,
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -93,6 +114,9 @@ Card.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Zona superior de la tarjeta.
+*/
 Card.Header = function ({children, onClick}) {
     return (
         <header
@@ -106,7 +130,13 @@ Card.Header = function ({children, onClick}) {
 Card.Header.displayName = 'Card.Header';
 
 Card.Header.propTypes = {
+    /**
+    * Hijos para la composición del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -115,6 +145,9 @@ Card.Header.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Contenido de la tarjeta.
+*/
 Card.Body = function ({children, collapsed}) {
     const [ref, { height: viewHeight }] = useMeasure();
     const { height, opacity } = useSpring({
@@ -144,7 +177,13 @@ Card.Body = function ({children, collapsed}) {
 Card.Body.displayName = 'Card.Body';
 
 Card.Body.propTypes = {
+    /**
+    * Hijos para el contenido del cuerpo.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * ¿La tarjeta muestra su contenido?
+    */
     collapsed: PropTypes.bool,
 };
 
@@ -153,6 +192,9 @@ Card.Body.defaultProps = {
     collapsed: undefined,
 };
 
+/**
+* Zona superior izquierda de la tarjeta.
+*/
 // eslint-disable-next-line react/display-name, react/prop-types
 Card.Header.Left = function ({children, onClick : onClickEvent}) {
     function onClick(event) {
@@ -175,7 +217,13 @@ Card.Header.Left = function ({children, onClick : onClickEvent}) {
 Card.Header.Left.displayName = 'Card.Header.Left';
 
 Card.Header.Left.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -184,6 +232,9 @@ Card.Header.Left.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Zona superior derecha de la tarjeta.
+*/
 // eslint-disable-next-line react/display-name, react/prop-types
 Card.Header.Right = function ({children, onClick : onClickEvent}) {
 
@@ -207,7 +258,13 @@ Card.Header.Right = function ({children, onClick : onClickEvent}) {
 Card.Header.Right.displayName = 'Card.Header.Right';
 
 Card.Header.Right.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -216,6 +273,9 @@ Card.Header.Right.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Área de título de la tarjeta.
+*/
 // eslint-disable-next-line react/display-name, react/prop-types
 Card.Header.Title = function ({title, subtitle, centered, onClick, onChange, editionDisabled}) {
     function onTitleChange(value) {
@@ -265,6 +325,28 @@ Card.Header.Title = function ({title, subtitle, centered, onClick, onChange, edi
 
 Card.Header.Title.displayName = 'Card.Header.Title';
 
+Card.Header.Title.propTypes = {
+    /**
+    * Título de la tarjeta.
+    */
+    title: PropTypes.string,
+    /**
+    * Subtítulo de la tarjeta.
+    */
+    subtitle: PropTypes.string,
+    /**
+    * ¿Debe estar centrado el título?
+    */
+    centered: PropTypes.bool,
+    /**
+    * Evento llamado al hacer click.
+    */
+    onClick: PropTypes.func,
+    /**
+    * ¿Está deshabilitada la edición del título?
+    */
+    editionDisabled: PropTypes.bool,
+};
 
 Card.Header.Title.defaultProps = {
     title: undefined,
@@ -272,9 +354,11 @@ Card.Header.Title.defaultProps = {
     centered: undefined,
     onClick: undefined,
     editionDisabled: false,
-    notEditable: false,
 };
 
+/**
+* Zona central de la tarjeta.
+*/
 Card.Middle = function ({children}) {
     return (
         <div
@@ -288,6 +372,9 @@ Card.Middle = function ({children}) {
 Card.Middle.displayName = 'Card.Middle';
 
 Card.Middle.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 

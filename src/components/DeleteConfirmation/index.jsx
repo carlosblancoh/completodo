@@ -8,6 +8,9 @@ import TextField from '../TextField';
 import './style.css';
 
 
+/**
+* Panel de confirmación de eliminación.
+*/
 export default function DeleteConfirmation({visible, variant, onCancel, onConfirm, error}) {
     let confirmationText;
     let buttonIcon;
@@ -95,10 +98,25 @@ export default function DeleteConfirmation({visible, variant, onCancel, onConfir
 }
 
 DeleteConfirmation.propTypes = {
+    /**
+    * ¿Está visible el panel?
+    */
     visible: PropTypes.bool,
+    /**
+    * Tipo de panel de eliminación mostrado.
+    */
     variant: PropTypes.string,
+    /**
+    * Evento llamado al cancelar la acción.
+    */
     onCancel: PropTypes.func,
+    /**
+    * Evento llamado al confirmar la acción.
+    */
     onConfirm: PropTypes.func,
+    /**
+    * Errores mostrados en el panel.
+    */
     error: PropTypes.string,
 };
 

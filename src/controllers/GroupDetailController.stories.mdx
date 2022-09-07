@@ -1,0 +1,29 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { GroupDetailController } from './GroupDetailController';
+
+<Meta title="Controller/Group Detail Controller" component={GroupDetailController} />
+
+# Group Detail Controller
+
+Controlador encargado de manejar la página `GroupDetail`.
+
+## Parámetros URL
+- `id`: identificador del grupo que se quiere mostrar.
+
+## Estado
+- `data`: datos del grupo.
+- `childrenData`: elementos asociados al grupo.
+- `groupsData`: datos de todos los grupos.
+- `archivedItemsData`: elementos archivados del grupo.
+
+## Métodos
+- `onBack()`: vuelve a la vista anterior.
+- `onNewGroup()`: crea un nuevo grupo.
+- `onNewTask()`: crea una nueva tarea.
+- `onNewNote()`: crea una nueva nota.
+- `onNewBlock()`: crea un nuevo bloque de calednario.
+- `onChange(value)`: modifica el grupo.
+- `onDelete()`: elimina el grupo.
+- `onNavigateToArchive()`: navegar a la lista de elementos archivados del grupo.
+- `computeStats()`: calcula las estadísticas del grupo.

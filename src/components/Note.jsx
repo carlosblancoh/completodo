@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import Card from './Card';
 import Icon from './Icon';
 
+
+/**
+* Nota.
+*/
 export default function Note({id, value, parent, onClick, onChange}) {
     const [expandedContent, setExpandedContent] = useState(false);
 
@@ -122,10 +126,25 @@ export default function Note({id, value, parent, onClick, onChange}) {
 }
 
 Note.propTypes = {
+    /**
+    * Contenido de la nota.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * Identificador de la nota.
+    */
     id: PropTypes.string,
+    /**
+    * Grupo al que pertenece la nota.
+    */
     parent: PropTypes.object,
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
+    /**
+    * Evento llamado al modificar la nota.
+    */
     onChange: PropTypes.func,
 };
 
@@ -136,6 +155,10 @@ Note.defaultProps = {
     onChange: undefined,
 };
 
+
+/**
+* Dar formato a la prioridad con emojis.
+*/
 function formatPriority(priority) {
     switch(priority){
     case -1:
@@ -150,6 +173,10 @@ function formatPriority(priority) {
     }
 }
 
+
+/**
+* Dar formato a la fecha.
+*/
 function formatDate(timestamp) {
     const months = [
         'enero',

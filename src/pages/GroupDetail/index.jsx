@@ -9,6 +9,10 @@ import Button from '../../components/Button';
 import './style.css';
 import StatsViewer from '../../components/StatsViewer';
 
+
+/**
+* Pantalla detalle de grupo.
+*/
 export default function GroupDetail({value, subItems, hasArchivedItems, onBack, groupsList, onNewTask : onNewTaskEvent, onNewGroup : onNewGroupEvent, onNewNote : onNewNoteEvent, onNewBlock : onNewBlockEvent, onChange, onDelete, onViewArchive, stats}) {
     let pinIconFill;
     const listItems = [];
@@ -182,18 +186,57 @@ export default function GroupDetail({value, subItems, hasArchivedItems, onBack, 
 }
 
 GroupDetail.propTypes = {
+    /**
+    * Contenido del grupo.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * Elementos contenidos por el grupo.
+    */
     subItems: PropTypes.array,
+    /**
+    * ¿Tiene elementos archivados?
+    */
     hasArchivedItems: PropTypes.bool,
+    /**
+    * Lista general de grupos.
+    */
     groupsList: PropTypes.array,
+    /**
+    * Evento llamado al hacer crear una tarea.
+    */
     onNewTask: PropTypes.func,
+    /**
+    * Evento llamado al crear un grupo.
+    */
     onNewGroup: PropTypes.func,
+    /**
+    * Evento llamado al crear una anotación.
+    */
     onNewNote: PropTypes.func,
+    /**
+    * Evento llamado al crear un bloque de calendario.
+    */
     onNewBlock: PropTypes.func,
+    /**
+    * Evento llamado al volver a la pantalla anterior.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al modificar un grupo.
+    */
     onChange: PropTypes.func,
+    /**
+    * Evento llamado al eliminar un grupo.
+    */
     onDelete: PropTypes.func,
+    /**
+    * Evento llamado al archivar un grupo.
+    */
     onViewArchive: PropTypes.func,
+    /**
+    * Datos de estadísticas del grupo.
+    */
     stats: PropTypes.object,
 };
 

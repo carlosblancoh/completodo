@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import {CalendarController } from './CalendarController';
+
+<Meta title="Controller/Calendar Controller" component={CalendarController} />
+
+# Calendar Controller
+
+Controlador encargado de manejar la página `Calendar`.
+
+## Parámetros URL
+- `year`: año a mostrar.
+- `month`: mes a mostrar.
+- `day`: día a mostrar.
+
+## Estado
+- `imageURL`: foto de perfil.
+- `blocksData`: datos de los bloques de calendario.
+- `filteredData`: elementos para el día seleccionado.
+- `selectedDayString`: día seleccionado.
+
+## Métodos
+- `onNewGroup()`: crea un nuevo grupo.
+- `onNewTask()`: crea una nueva tarea.
+- `onNewNote()`: crea una nueva nota.
+- `onNewBlock(value)`: crea un nuevo bloque de calednario.
+- `onNavigateToProfile()`: navegar a la página de perfil.
+- `onNavigateToHome()`: navegar a la página de inicio.
+- `onNavigateToSearch()`: navegar a la página de búsqueda.
+- `onDayClick()`: abre el calendario en un día específico.

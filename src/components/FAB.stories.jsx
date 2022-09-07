@@ -9,6 +9,11 @@ export default {
     argTypes: {
 
     },
+    parameters: {
+        docs: {
+            inlineStories: false,
+        }
+    }
 };
 
 const Template = (args) => <FAB {...args} />;

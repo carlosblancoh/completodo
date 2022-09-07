@@ -3,6 +3,9 @@ import Icon from '../Icon';
 import PropTypes from 'prop-types';
 import './style.css';
 
+/**
+* Temporizador.
+*/
 export default function Timer({value, start, paused, onPlay, onPause}) {
     const [now, setNow] = useState(new Date(Date.now()));
     const [realPaused, setRealPaused] = useState(paused);
@@ -62,10 +65,25 @@ export default function Timer({value, start, paused, onPlay, onPause}) {
 }
 
 Timer.propTypes = {
+    /**
+    * Duración almacenada.
+    */
     value: PropTypes.number,
+    /**
+    * Instante de inicio.
+    */
     start: PropTypes.instanceOf(Date),
+    /**
+    * ¿Está el temporizador en pausa?
+    */
     paused: PropTypes.bool,
+    /**
+    * Evento llamado al iniciar el temporizador.
+    */
     onPlay: PropTypes.func,
+    /**
+    * Evento llamado al pausar el temporizador.
+    */
     onPause: PropTypes.func,
 };
 
@@ -77,6 +95,9 @@ Timer.defaultProps = {
     onPause: undefined,
 };
 
+/**
+* Cambio de formato del tiempo en segundos a hh:mm:ss.
+*/
 function durationWithSecondsConversion(value) {
     const duration = value;
     if (!duration) {

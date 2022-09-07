@@ -49,7 +49,9 @@ Button.propTypes = {
      * Evento al accionar el botón.
      */
     onClick:PropTypes.func,
-
+    /**
+    * Tipo de botón.
+    */
     variant:PropTypes.string,
 };
 

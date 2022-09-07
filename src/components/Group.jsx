@@ -3,7 +3,9 @@ import React from 'react';
 import Card from './Card';
 import Icon from './Icon';
 
-
+/**
+* Grupo de tareas.
+*/
 export default function Group({id, value, onClick}) {
     let isStackable = false;
     let subtitleText = undefined;
@@ -87,8 +89,17 @@ export default function Group({id, value, onClick}) {
 }
 
 Group.propTypes = {
+    /**
+    * Identificador del grupo.
+    */
     id: PropTypes.string,
+    /**
+    * Contenido del grupo.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 

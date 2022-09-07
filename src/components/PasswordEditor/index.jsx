@@ -7,7 +7,9 @@ import BlurredOverlay from '../BlurredOverlay';
 import TextField from '../TextField';
 import './style.css';
 
-
+/**
+* Panel de edición de contraseña
+*/
 export default function PasswordEditor({ onBack, onChange }) {
     const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
@@ -130,7 +132,13 @@ export default function PasswordEditor({ onBack, onChange }) {
 }
 
 PasswordEditor.propTypes = {
+    /**
+    * Evento llamado cancelar la acción.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al cambiar la contraseña.
+    */
     onChange: PropTypes.func,
 };
 

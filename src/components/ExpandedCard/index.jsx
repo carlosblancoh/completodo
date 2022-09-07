@@ -8,7 +8,7 @@ import './style.css';
 
 
 /**
- * Tarjeta expandida que muestra información y/o permite edición de los elementos.
+ * Tarjeta expandida que muestra información y permite edición de los elementos.
  */
 export default function ExpandedCard({children, variant, color}) {
     let textColor;
@@ -48,8 +48,17 @@ export default function ExpandedCard({children, variant, color}) {
 }
 
 ExpandedCard.propTypes = {
+    /**
+    * Hijos para la composición del elemento.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Tipo de tarjeta, normal o transparente.
+    */
     variant: PropTypes.oneOf(['plain', 'glass']),
+    /**
+    * Color de la tarjeta.
+    */
     color: PropTypes.string,
 };
 
@@ -59,6 +68,9 @@ ExpandedCard.defaultProps = {
     color: undefined,
 };
 
+/**
+* Zona superior de la tarjeta.
+*/
 ExpandedCard.Header = function ({children}) {
     return (
         <header
@@ -72,6 +84,9 @@ ExpandedCard.Header = function ({children}) {
 ExpandedCard.Header.displayName = 'ExpandedCard.Header';
 
 ExpandedCard.Header.propTypes = {
+    /**
+    * Hijos para la composición del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -79,6 +94,9 @@ ExpandedCard.Header.defaultProps = {
     children: undefined,
 };
 
+/**
+* Contenido de la tarjeta.
+*/
 ExpandedCard.Body = function ({children}) {
     return (
         <main
@@ -92,6 +110,9 @@ ExpandedCard.Body = function ({children}) {
 ExpandedCard.Body.displayName = 'ExpandedCard.Body';
 
 ExpandedCard.Body.propTypes = {
+    /**
+    * Hijos para la composición del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -99,6 +120,9 @@ ExpandedCard.Body.defaultProps = {
     children: undefined,
 };
 
+/**
+* Barra superior de la tarjeta.
+*/
 ExpandedCard.Top = function ({children}) {
     return (
         <main
@@ -110,6 +134,9 @@ ExpandedCard.Top = function ({children}) {
 };
 
 ExpandedCard.Top.propTypes = {
+    /**
+    * Hijos para el contenido del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -119,6 +146,9 @@ ExpandedCard.Top.defaultProps = {
 
 ExpandedCard.Top.displayName = 'ExpandedCard.Top';
 
+/**
+* Zona inferior de la tarjeta.
+*/
 ExpandedCard.Bottom = function ({children}) {
     return (
         <main
@@ -132,6 +162,9 @@ ExpandedCard.Bottom = function ({children}) {
 ExpandedCard.Bottom.displayName = 'ExpandedCard.Bottom';
 
 ExpandedCard.Bottom.propTypes = {
+    /**
+    * Hijos para la composición del componente.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -139,6 +172,9 @@ ExpandedCard.Bottom.defaultProps = {
     children: undefined,
 };
 
+/**
+* Zona superior izquierda de la tarjeta.
+*/
 // eslint-disable-next-line react/display-name, react/prop-types
 ExpandedCard.Header.Left = function ({children, onClick}) {
     return (
@@ -154,7 +190,13 @@ ExpandedCard.Header.Left = function ({children, onClick}) {
 ExpandedCard.Header.Left.displayName = 'ExpandedCard.Header.Left';
 
 ExpandedCard.Header.Left.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -163,6 +205,9 @@ ExpandedCard.Header.Left.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Zona superior derecha de la tarjeta.
+*/
 // eslint-disable-next-line react/display-name, react/prop-types
 ExpandedCard.Header.Right = function ({children, onClick}) {
     return (
@@ -178,7 +223,13 @@ ExpandedCard.Header.Right = function ({children, onClick}) {
 ExpandedCard.Header.Right.displayName = 'ExpandedCard.Header.Right';
 
 ExpandedCard.Header.Right.propTypes = {
+    /**
+    * Hijos para el contenido.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 
@@ -187,6 +238,9 @@ ExpandedCard.Header.Right.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Espacio para el título de la tarjeta.
+*/
 // eslint-disable-next-line react/display-name, react/prop-types
 ExpandedCard.Header.Title = function ({title, subtitle, centered, onChange}) {
     function onTitleChange(value) {
@@ -227,8 +281,17 @@ ExpandedCard.Header.Title = function ({title, subtitle, centered, onChange}) {
 ExpandedCard.Header.Title.displayName = 'ExpandedCard.Header.Title';
 
 ExpandedCard.Header.Title.propTypes = {
+    /**
+    * Título de la tarjeta.
+    */
     title: PropTypes.string,
+    /**
+    * Subtítulo de la tarjeta.
+    */
     subtitle: PropTypes.string,
+    /**
+    * ¿Está centrado el título de la tarjeta?
+    */
     centered: PropTypes.bool,
 };
 

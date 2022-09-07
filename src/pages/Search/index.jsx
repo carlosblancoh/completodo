@@ -7,6 +7,9 @@ import './style.css';
 import TextField from '../../components/TextField';
 
 
+/**
+* Pantalla de búsqueda.
+*/
 export default function Search({items, searchString, onSearchStringChange, onBack}) {
 
     return (
@@ -54,9 +57,21 @@ export default function Search({items, searchString, onSearchStringChange, onBac
 }
 
 Search.propTypes = {
+    /**
+    * Resultados de la búsqueda.
+    */
     items: PropTypes.array,
+    /**
+    * Términos buscados.
+    */
     searchString: PropTypes.string,
+    /**
+    * Evento llamado al modificar los términos buscados.
+    */
     onSearchStringChange: PropTypes.func,
+    /**
+    * Evento llamado al volver a la pantalla anterior.
+    */
     onBack: PropTypes.func,
 };
 

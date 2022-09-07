@@ -16,6 +16,9 @@ import { useRef } from 'react';
 import Timer from '../../components/Timer';
 
 
+/**
+* Página detalle de tarea.
+*/
 export default function TaskDetail({id, value, subItems, hasArchivedItems, onCompleted, onUncompleted, _onClick, onBack, onChange, parent, parentColor, groupsList, onNewTask : onNewTaskEvent, onDelete, onViewArchive, onTimerPlay, onTimerPause}) {
     const listTasks = [];
     const wasCompleted = usePrevious(value.completed);
@@ -575,23 +578,74 @@ export default function TaskDetail({id, value, subItems, hasArchivedItems, onCom
 }
 
 TaskDetail.propTypes = {
+    /**
+    * Identificador de tarea.
+    */
     id: PropTypes.string,
+    /**
+    * Contenido de la tarea.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * lista de subtareas.
+    */
     subItems: PropTypes.array,
+    /**
+    * ¿Tiene elementos archivados?
+    */
     hasArchivedItems: PropTypes.bool,
+    /**
+    * Evento llamado al completar la tarea.
+    */
     onCompleted: PropTypes.func,
+    /**
+    * Evento llamado al descompletar la tarea.
+    */
     onUncompleted: PropTypes.func,
     _onClick: PropTypes.func,
+    /**
+    * Evento llamado al volver a la pantalla anterior.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al modificar la tarea.
+    */
     onChange: PropTypes.func,
+    /**
+    * Grupo o tarea al que pertenece la tarea.
+    */
     parent: PropTypes.object,
+    /**
+    * Color del grupo al que pertenece la tarea o su tarea contenedora.
+    */
     parentColor: PropTypes.string,
+    /**
+    * Evento llamado modificar la localización de la tarea.
+    */
     onLocationChage: PropTypes.func,
+    /**
+    * Lista general de grupos.
+    */
     groupsList: PropTypes.array,
+    /**
+    * Evento llamado al hacer crear una subtarea.
+    */
     onNewTask: PropTypes.func,
+    /**
+    * Evento llamado al eliminar la tarea.
+    */
     onDelete: PropTypes.func,
+    /**
+    * Evento llamado al ver los elementos archivados.
+    */
     onViewArchive: PropTypes.func,
+    /**
+    * Evento llamado al iniciar el temporizador.
+    */
     onTimerPlay: PropTypes.func,
+    /**
+    * Evento llamado al pausar el temporizador.
+    */
     onTimerPause: PropTypes.func,
 };
 
@@ -615,6 +669,9 @@ TaskDetail.defaultProps = {
     onTimerPause: undefined,
 };
 
+/**
+* Convertir fecha de Date al formato de Firebase.
+*/
 function dateConversion(value) {
     const date = value?.toDate?.() ?? value;
     if (!date) {
@@ -626,6 +683,9 @@ function dateConversion(value) {
     return iso.slice(0, -8);
 }
 
+/**
+* Cambiar el formato de la duración de segundos a hh::mm:ss.
+*/
 function durationWithSecondsConversion(value) {
     const duration = value;
     if (!duration) {

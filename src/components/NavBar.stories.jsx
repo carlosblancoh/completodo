@@ -9,6 +9,11 @@ export default {
     argTypes: {
 
     },
+    parameters: {
+        docs: {
+            inlineStories: false,
+        }
+    }
 };
 
 const _Template = (args) => <NavBar {...args} />;

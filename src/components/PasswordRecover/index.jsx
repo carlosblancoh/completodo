@@ -7,7 +7,9 @@ import BlurredOverlay from '../BlurredOverlay';
 import TextField from '../TextField';
 import './style.css';
 
-
+/**
+* Panel de recuperación de contraseña
+*/
 export default function PasswordRecover({ onSubmit, onBack }) {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState(null);
@@ -99,7 +101,13 @@ export default function PasswordRecover({ onSubmit, onBack }) {
 }
 
 PasswordRecover.propTypes = {
+    /**
+    * Evento llamado al confirmar la recuperación.
+    */
     onSubmit: PropTypes.func,
+    /**
+    * Evento llamado al hacer cancelar la acción.
+    */
     onBack: PropTypes.func,
 };
 

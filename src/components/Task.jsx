@@ -7,6 +7,10 @@ import TaskController from '../controllers/TaskController';
 import usePrevious from '../hooks/previous';
 import Timer from './Timer';
 
+
+/**
+* Tarea.
+*/
 export default function Task({id, value, parent, onCompleted, onUncompleted, onClick, onChange, onTimerPlay, onTimerPause, stackable}) {
     const [expandedSubtasks, setExpandedSubtasks] = useState(false);
     const wasCompleted = usePrevious(value.completed);
@@ -195,15 +199,45 @@ export default function Task({id, value, parent, onCompleted, onUncompleted, onC
 }
 
 Task.propTypes = {
+    /**
+    * Contenido de la tarea.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * Identificador de la tarea.
+    */
     id: PropTypes.string,
+    /**
+    * Grupo o tarea al que pertenece la tarea.
+    */
     parent: PropTypes.object,
+    /**
+    * Evento llamado al completar la tarea.
+    */
     onCompleted: PropTypes.func,
+    /**
+    * Evento llamado al descompletar la tarea.
+    */
     onUncompleted: PropTypes.func,
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
+    /**
+    * Evento llamado al modificar la tarea.
+    */
     onChange: PropTypes.func,
+    /**
+    * Evento llamado al iniciar el temporizador de la tarea.
+    */
     onTimerPlay: PropTypes.func,
+    /**
+    * Evento llamado al pausar el temporizador de la tarea.
+    */
     onTimerPause: PropTypes.func,
+    /**
+    * ¿La tarea se puede acoplar a otras?
+    */
     stackable: PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.oneOf(['auto'])
@@ -222,6 +256,9 @@ Task.defaultProps = {
     stackable: undefined,
 };
 
+/**
+* Dar formato a la prioridad con emojis
+*/
 function formatPriority(priority) {
     switch(priority){
     case -1:
@@ -236,6 +273,9 @@ function formatPriority(priority) {
     }
 }
 
+/**
+* Dar fomrato a la dificultad con emojis.
+*/
 function formatDifficulty(difficulty) {
     switch(difficulty){
     case -1:
@@ -250,6 +290,9 @@ function formatDifficulty(difficulty) {
     }
 }
 
+/**
+* Dar formato a la fecha.
+*/
 function formatDate(timestamp) {
     const months = [
         'enero',

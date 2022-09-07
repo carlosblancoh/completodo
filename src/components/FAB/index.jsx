@@ -53,7 +53,7 @@ FAB.propTypes = {
      */
     text: PropTypes.string,
     /**
-     * Debe usarse la variante pequeña del botón.
+     * ¿Debe usarse la variante pequeña del botón?
      */
     small: PropTypes.bool,
     /**
@@ -68,7 +68,9 @@ FAB.propTypes = {
      * Indica la distancia del botón con el borde inferior de la pantalla.
      */
     offset: PropTypes.number,
-
+    /**
+    * Indica la distancia de los botones de acción flotantes anidados.
+    */
     __offset: PropTypes.number,
     /**
      * Evento llamado al accionar el botón.
@@ -87,6 +89,9 @@ FAB.defaultProps = {
     onClick: undefined,
 };
 
+/**
+* Botón de acción con botones anidados.
+*/
 export function ComposedFAB({offset, actions, ...props}){
     const [expanded, setExpanded] = useState(false);
     const ref1 = useRef();

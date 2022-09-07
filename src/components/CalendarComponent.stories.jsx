@@ -29,4 +29,6 @@ const Template = (args) => {
 };
 export const basicCalendar = Template.bind({});
 basicCalendar.args = {
+    today: Date.now(),
+    blocks: [],
 };

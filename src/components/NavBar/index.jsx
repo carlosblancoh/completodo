@@ -6,7 +6,7 @@ import './style.css';
 
 
 /**
- * Barra de navegación.
+ * Barra de navegación inferior.
  */
 export default function NavBar({children}) {
     let classes = [
@@ -29,6 +29,9 @@ export default function NavBar({children}) {
 }
 
 NavBar.propTypes = {
+    /**
+    * Hijos para el contenido de la barra.
+    */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
 };
 
@@ -36,6 +39,9 @@ NavBar.defaultProps = {
     children: undefined,
 };
 
+/**
+* Pestañas de la barra de navegación.
+*/
 NavBar.Tab = function ({icon, name, active, onClick}) {
     let classes = [
         'component-navBar-tab',
@@ -59,9 +65,21 @@ NavBar.Tab = function ({icon, name, active, onClick}) {
 NavBar.Tab.displayName = 'NavBar.Tab';
 
 NavBar.Tab.propTypes = {
+    /**
+    * Icono de la pestaña.
+    */
     icon: PropTypes.string,
+    /**
+    * Nombre de la pestaña.
+    */
     name: PropTypes.string,
+    /**
+    * ¿Es esta la pestaña activa?
+    */
     active: PropTypes.bool,
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
 };
 

@@ -7,7 +7,9 @@ import Icon from '../../components/Icon';
 import TextField from '../../components/TextField';
 import PasswordRecover from '../../components/PasswordRecover';
 
-
+/**
+* Página de inicio de sesión.
+*/
 export default function Login({onLogin, onRecoverPassord}) {
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
@@ -576,7 +578,13 @@ export default function Login({onLogin, onRecoverPassord}) {
 }
 
 Login.propTypes = {
+    /**
+    * Evento llamado al iniciar sesión.
+    */
     onLogin: PropTypes.func,
+    /**
+    * Evento llamado al recuperar la contraseña.
+    */
     onRecoverPassord: PropTypes.func,
 };
 

@@ -10,7 +10,11 @@ export default {
     },
 };
 
-const Template = (args) => <Home {...args} />;
+const Template = (args) => <HomeComponent {...args} />;
 export const Home = Template.bind({});
 Home.args = {
+    'items': [],
+    'todayItems': [],
+    'hasArchivedItems': true,
+    'profilePicture': '/logo512.png'
 };

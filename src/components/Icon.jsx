@@ -41,9 +41,21 @@ Icon.propTypes = {
      * ¿Debe estar relleno?
      */
     fill: PropTypes.bool,
+    /**
+    * Grosor del icono.
+    */
     weight: PropTypes.number,
+    /**
+    * Grosor granular del icono.
+    */
     grade: PropTypes.number,
+    /**
+    * Tamaño del icono.
+    */
     size: PropTypes.number,
+    /**
+    * Color del icono.
+    */
     color: PropTypes.string,
 };
 

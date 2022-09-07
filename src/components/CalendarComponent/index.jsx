@@ -117,9 +117,21 @@ export default function CalendarComponent({today, onClick, blocks}) {
 }
 
 CalendarComponent.propTypes = {
+    /**
+    * Fecha del día presente.
+    */
     today: PropTypes.instanceOf(Date),
+    /**
+    * Fecha del día seleccionado.
+    */
     selected: PropTypes.instanceOf(Date),
+    /**
+    * Evento llamado al hacer click.
+    */
     onClick: PropTypes.func,
+    /**
+    * Lista de eventos a mostrar.
+    */
     blocks: PropTypes.array,
 };
 

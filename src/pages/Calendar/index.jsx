@@ -9,7 +9,9 @@ import './style.css';
 import ItemController from '../../controllers/ItemController';
 import Card from '../../components/Card';
 
-
+/**
+* Pantalla de calendario.
+*/
 export default function Calendar({onNewTask : onNewTaskEvent, onNewGroup : onNewGroupEvent, onNewNote : onNewNoteEvent, onNewBlock : onNewBlockEvent, onViewProfile, onViewHome, onViewSearch, profilePicture, blocks, onDayClick, items, selectedDayString}) {
 
     function onNewTask(event) {
@@ -148,17 +150,53 @@ export default function Calendar({onNewTask : onNewTaskEvent, onNewGroup : onNew
 }
 
 Calendar.propTypes = {
+    /**
+    * Evento llamado al crear una tarea.
+    */
     onNewTask: PropTypes.func,
+    /**
+    * Evento llamado al crear un grupo.
+    */
     onNewGroup: PropTypes.func,
+    /**
+    * Evento llamado al crear una nota.
+    */
     onNewNote: PropTypes.func,
+    /**
+    * Evento llamado al crear un bloque de calendario.
+    */
     onNewBlock: PropTypes.func,
+    /**
+    * Evento llamado al navegar al perfil.
+    */
     onViewProfile: PropTypes.func,
+    /**
+    * Evento llamado al navegar a inicio.
+    */
     onViewHome: PropTypes.func,
+    /**
+    * Evento llamado al navegar a buscar.
+    */
     onViewSearch: PropTypes.func,
+    /**
+    * Imagen de perfil del usuario.
+    */
     profilePicture: PropTypes.string,
+    /**
+    * Lista de eventos o bloques de tiempo a mostrar.
+    */
     blocks: PropTypes.array,
+    /**
+    * Evento llamado al hacer click en un día.
+    */
     onDayClick: PropTypes.func,
+    /**
+    * Lista de elementos programados para el día.
+    */
     items: PropTypes.array,
+    /**
+    * Día seleccionado.
+    */
     selectedDayString: PropTypes.string,
 };
 

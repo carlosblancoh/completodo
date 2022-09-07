@@ -6,7 +6,9 @@ import Card from '../../components/Card';
 import TextField from '../../components/TextField';
 
 
-
+/**
+* Pantalla de registro de usuarios.
+*/
 export default function Register({onRegister}) {
     const[username, setUsername] = useState('');
     const[email, setEmail] = useState('');
@@ -211,6 +213,9 @@ export default function Register({onRegister}) {
 }
 
 Register.propTypes = {
+    /**
+    * Evento llamado al registrar un nuevo usuario.
+    */
     onRegister: PropTypes.func,
 };
 

@@ -10,8 +10,10 @@ import DeleteConfirmation from '../DeleteConfirmation';
 import TextField from '../TextField';
 import './style.css';
 
-
-export default function GroupEditor({value, _onClick, onBack, onCloseEditor, onChange, _parentName, _parentColor, groupsList, onDelete}) {
+/**
+* Panel de edición de grupo.
+*/
+export default function GroupEditor({value, onBack, onCloseEditor, onChange, groupsList, onDelete}) {
     const [title, setTitle] = useState(value?.title ?? '');
     const [parent, setParent] = useState(value?.parent ?? '');
     const [color, setColor] = useState(value?.color ?? '');
@@ -292,25 +294,37 @@ export default function GroupEditor({value, _onClick, onBack, onCloseEditor, onC
 }
 
 GroupEditor.propTypes = {
+    /**
+    * Grupo editado.
+    */
     value: PropTypes.object.isRequired,
-    _onClick: PropTypes.func,
+    /**
+    * Evento llamado al hacer cancelar la acción.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al cerrar el editor.
+    */
     onCloseEditor: PropTypes.func,
+    /**
+    * Evento llamado al eliminar el grupo.
+    */
     onDelete: PropTypes.func,
+    /**
+    * Evento llamado al modificar el grupo.
+    */
     onChange: PropTypes.func,
-    _parentName: PropTypes.string,
-    _parentColor: PropTypes.string,
+    /**
+    * Lista de grupos general.
+    */
     groupsList: PropTypes.array,
 };
 
 GroupEditor.defaultProps = {
-    _onClick: undefined,
     onBack: undefined,
     onCloseEditor: undefined,
     onDelete: undefined,
     onChange: undefined,
-    _parentName: undefined,
-    _parentColor: undefined,
     groupsList: [],
 };
 

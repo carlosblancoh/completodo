@@ -11,7 +11,9 @@ import { useRef } from 'react';
 import Icon from '../../components/Icon';
 import PasswordEditor from '../../components/PasswordEditor';
 
-
+/**
+* Pantalla de perfil de usuario.
+*/
 export default function Profile({value, email, profilePicture, onChange, onProfilePictureChange, onViewTrash, onBack, onPasswordChange, onLogOut, onDelete}) {
     const ref = useRef(null);
     const [confirmationVisible, setConfirmationVisible] = useState(false);
@@ -191,15 +193,45 @@ export default function Profile({value, email, profilePicture, onChange, onProfi
 }
 
 Profile.propTypes = {
+    /**
+    * Contenido del perfil de usuario.
+    */
     value:  PropTypes.object.isRequired,
+    /**
+    * Dirección de correo electrónico del usuario.
+    */
     email: PropTypes.string,
+    /**
+    * Foto de perfil del usuario.
+    */
     profilePicture: PropTypes.string,
+    /**
+    * Evento llamado al modificar el usuario.
+    */
     onChange: PropTypes.func,
+    /**
+    * Evento llamado al modificar la foto de perfil del usuario.
+    */
     onProfilePictureChange: PropTypes.func,
+    /**
+    * Evento llamado al ver la papelera de reciclaje.
+    */
     onViewTrash: PropTypes.func,
+    /**
+    * Evento llamado al volver a la página anterior.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al modificar la contraseña.
+    */
     onPasswordChange: PropTypes.func,
+    /**
+    * Evento llamado al cerrar sesión.
+    */
     onLogOut: PropTypes.func,
+    /**
+    * Evento llamado al eliminar la cuenta.
+    */
     onDelete: PropTypes.func,
 };
 

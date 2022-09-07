@@ -5,6 +5,9 @@ import TopBar from '../../components/TopBar';
 import ItemController from '../../controllers/ItemController';
 
 
+/**
+* Pantalla de papelera de reciclaje.
+*/
 export default function Trash({items, onBack}) {
     const listItems = [];
 
@@ -39,7 +42,13 @@ export default function Trash({items, onBack}) {
 }
 
 Trash.propTypes = {
+    /**
+    * Elementos contenidos por la papelera de reciclaje.
+    */
     items: PropTypes.array,
+    /**
+    * Evento llamado al volver a la pantalla anterior.
+    */
     onBack: PropTypes.func,
 };
 

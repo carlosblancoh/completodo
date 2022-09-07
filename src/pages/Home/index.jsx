@@ -9,7 +9,9 @@ import Button from '../../components/Button';
 import './style.css';
 import Card from '../../components/Card';
 
-
+/**
+* Página de inicio de la aplicación.
+*/
 export default function Home({onNewTask : onNewTaskEvent, onNewGroup : onNewGroupEvent, onNewNote : onNewNoteEvent, onNewBlock : onNewBlockEvent, items, todayItems, hasArchivedItems, onViewArchive, onViewProfile, onViewCalendar, onViewSearch, profilePicture}) {
 
     function onNewTask(event) {
@@ -168,17 +170,53 @@ export default function Home({onNewTask : onNewTaskEvent, onNewGroup : onNewGrou
 }
 
 Home.propTypes = {
+    /**
+    * Evento llamado al crear una nota.
+    */
     onNewTask: PropTypes.func,
+    /**
+    * Evento llamado al crear un grupo.
+    */
     onNewGroup: PropTypes.func,
+    /**
+    * Evento llamado al crear una anotación.
+    */
     onNewNote: PropTypes.func,
+    /**
+    * Evento llamado al crear un bloque de calendario.
+    */
     onNewBlock: PropTypes.func,
+    /**
+    * Contenido de la pantalla.
+    */
     items: PropTypes.array,
+    /**
+    * Lista de elementos programados para hoy.
+    */
     todayItems: PropTypes.array,
+    /**
+    * ¿Tiene elementos archivados?
+    */
     hasArchivedItems: PropTypes.bool,
+    /**
+    * Evento llamado al ver el archivo.
+    */
     onViewArchive: PropTypes.func,
+    /**
+    * Evento llamado al ver el perfil.
+    */
     onViewProfile: PropTypes.func,
+    /**
+    * Evento llamado al ver el calendario.
+    */
     onViewCalendar: PropTypes.func,
+    /**
+    * Evento llamado al ver la pantalla de búsqueda.
+    */
     onViewSearch: PropTypes.func,
+    /**
+    * Evento llamado al ver la foto de perfil.
+    */
     profilePicture: PropTypes.string,
 };
 
@@ -197,6 +235,9 @@ Home.defaultProps = {
     profilePicture: undefined,
 };
 
+/**
+* Dar formato a la fecha.
+*/
 function formatDayDate(timestamp) {
     const months = [
         'enero',

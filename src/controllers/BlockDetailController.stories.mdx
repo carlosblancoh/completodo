@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { BlockDetailController } from './BlockDetailController';
+
+<Meta title="Controller/Block Detail Controller" component={BlockDetailController} />
+
+# Block Detail Controller
+
+Controlador encargado de manejar la página `BlockDetail`.
+
+## Parámetros URL
+- `id`: identificador del bloque de calendario que se quiere mostrar.
+
+## Estado
+- `data`: datos del bloque de calendario.
+- `childrenData`: tareas asociadas al bloque.
+- `groupData`: datos del grupo asociado al bloque de calendario.
+
+## Métodos
+- `onCompleted()`: marca el bloque de calendario como completado.
+- `onUncompleted()`: marca el bloque de calendario como no completado.
+- `onBack()`: vuelve a la vista anterior.
+- `onChange(value)`: modifica el bloque de calendario.
+- `onDelete()`: elimina el bloque de calendario.

@@ -13,7 +13,10 @@ import './style.css';
 import { useRef } from 'react';
 
 
-export default function BlockDetail({id, value, onCompleted, onUncompleted, _onClick, onBack, onChange, group, groupsList, onDelete}) {
+/**
+* Pantalla detalle de evento o bloque de tiempo
+*/
+export default function BlockDetail({id, value, onCompleted, onUncompleted, onBack, onChange, group, groupsList, onDelete}) {
     const wasCompleted = usePrevious(value.completed);
     const [confirmationVisible, setConfirmationVisible] = useState(false);
     const ref = useRef(null);
@@ -396,16 +399,45 @@ export default function BlockDetail({id, value, onCompleted, onUncompleted, _onC
 }
 
 BlockDetail.propTypes = {
+    /**
+    * Identificador del bloque de tiempo.
+    */
     id: PropTypes.string,
+    /**
+    * Contenido del bloque de tiempo.
+    */
     value: PropTypes.object.isRequired,
+    /**
+    * Evento llamado al hacer completar el bloque.
+    */
     onCompleted: PropTypes.func,
+    /**
+    * Evento llamado al descompletar el bloque.
+    */
     onUncompleted: PropTypes.func,
-    _onClick: PropTypes.func,
+    /**
+    * Evento llamado al volver a la pantalla anterior.
+    */
     onBack: PropTypes.func,
+    /**
+    * Evento llamado al modificar el bloque.
+    */
     onChange: PropTypes.func,
+    /**
+    * Grupo del que recuperar tareas.
+    */
     group: PropTypes.object,
+    /**
+    * Evento llamado al cambiar la localización.
+    */
     onLocationChage: PropTypes.func,
+    /**
+    * Lista general de grupos.
+    */
     groupsList: PropTypes.array,
+    /**
+    * Evento llamado al eliminar el evento.
+    */
     onDelete: PropTypes.func,
 };
 
@@ -413,7 +445,6 @@ BlockDetail.defaultProps = {
     id: undefined,
     onCompleted: undefined,
     onUncompleted: undefined,
-    _onClick: undefined,
     onBack: undefined,
     onChange: undefined,
     group: undefined,
@@ -422,6 +453,9 @@ BlockDetail.defaultProps = {
     onDelete: undefined,
 };
 
+/**
+* Conversión de formato de fecha.
+*/
 function dateConversion(value) {
     const date = value?.toDate?.() ?? value;
     if (!date) {
@@ -433,6 +467,9 @@ function dateConversion(value) {
     return iso.slice(0, -8);
 }
 
+/**
+* Conversión del formato de la duración.
+*/
 function durationConversion(value) {
     const duration = value;
     if (!duration) {

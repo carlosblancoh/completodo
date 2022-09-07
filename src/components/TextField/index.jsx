@@ -163,10 +163,26 @@ export default function TextField({placeholder, value, onChange: onChangeEvent, 
     }
 }
 TextField.propTypes = {
+    /**
+    * Texto mostrado en el campo vacío.
+    */
     placeholder: PropTypes.string,
+    /**
+    * Contenido del campo de texto.
+    */
     value: PropTypes.string,
+    /**
+    * Evento llamado al modificar el campo de texto.
+    */
     onChange: PropTypes.func,
+    /**
+    * Tipo de campo de texto, normal, sin fondo, de búsqueda, de correo
+    * electrónico, de contraseña o de tamaño variable.
+    */
     variant: PropTypes.oneOf(['default', 'noBackground', 'search', 'email', 'password', 'resizable']),
+    /**
+    * ¿Está deshabilitada la edición del campo de texto?
+    */
     isDisabled: PropTypes.bool,
 };
 
