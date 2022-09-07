@@ -1,0 +1,1259 @@
+.component-textField {
+    align-items: center;
+    max-width: none;
+    display: block;
+    box-sizing: content-box;
+
+    flex-grow: 1;
+
+
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+.component-textField::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 50%;
+}
+
+.component-textField:-ms-input-placeholder {
+    color: inherit;
+    opacity: 50%;
+}
+
+.component-textField::placeholder {
+    color: inherit;
+    opacity: 50%;
+}
+
+.component-textField-default, .component-textField-search, .component-textField-email, .component-textField-password {
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+
+    background: rgba(239, 239, 239, 0.32);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    border: 0.03rem solid rgba(112, 112, 112, 0.5);
+    border-radius: 0.75rem;
+}
+
+.component-textField-resizable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+
+    resize: none;
+    overflow: hidden;
+    word-break: break-word;
+
+    background: none;
+    border: none;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    height: 1em;
+}
+
+.component-textField:focus {
+    outline: none;
+}
+
+.component-textField-noBackground {
+    background: none;
+    border: none;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    height: 1em;
+}
+
+.component-textField-search::-webkit-search-cancel-button{
+  -webkit-appearance:none;
+}
+
+.component-textField-form {
+    position: relative;
+
+    align-items: center;
+    display: flex;
+}
+
+.component-textField-textClear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none !important;
+}
+
+.component-textField-container {
+    position: relative;
+}
+
+.component-textField-space {
+    display: inline-block;
+    white-space: pre-wrap;
+    opacity: 0;
+    word-break: break-word;
+}
+
+.component-topBar {
+    width: calc(100% - 1rem);
+    min-height: 4rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    margin: 0;
+    max-width: none;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+@media (max-width: 799px) {
+    .component-topBar-left,
+    .component-topBar-right {
+        padding: 0 0.5rem !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-topBar:not(.component-topBar-noBackground) {
+        width: 1600px;
+        padding: 0 calc((100% - 1600px) / 2);
+    }
+}
+
+@media (min-width: 1900px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-topBar:not(.component-topBar-noBackground) {
+        width: 1900px;
+        padding: 0 calc((100% - 1900px) / 2);
+    }
+}
+
+
+.component-topBar.component-topBar-onGlass {
+    border-bottom: 0.03rem solid rgba(112, 112, 112, 0.5);
+    background: rgba(239, 239, 239, 0.32);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+}
+
+.component-topBar-title {
+    flex-grow: 1;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    min-width: 1rem;
+}
+
+.component-topBar-left + .component-topBar-title {
+    margin-left: 0;
+}
+
+.component-topBar-left,
+.component-topBar-right {
+    min-width: 1rem;
+    padding: 0 1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-topBar-right {
+    margin-left: auto;
+}
+
+.component-topBar-right ~ .component-topBar-right {
+    margin-left: 0;
+}
+
+.component-topBar-title > h1 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0.25rem;
+    padding: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.component-topBar-title > span {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-top: -0.25rem;
+    opacity: 0.6;
+}
+
+.component-card {
+    border: 0.05rem solid rgba(112, 112, 112, 0.5);
+    border-radius: 1rem;
+    width: calc(100% - 1rem);
+    min-height: 4.5rem;
+    margin: 0.5rem;
+    padding: 0;
+    font-family: inherit;
+    max-width: none;
+    position: relative;
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-card {
+        max-width: calc(800px - 1rem);
+        margin: 0.5rem auto;
+    }
+}
+
+.component-card:not(.component-card-stackable) {
+    -webkit-animation: component-card-rise 1s;
+            animation: component-card-rise 1s;
+}
+
+.component-card.component-card-plain {
+    background: #FFFFFF;
+}
+
+.component-card.component-card-glass {
+    background: rgba(239, 239, 239, 0.32);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+}
+
+.component-card-header {
+    display: flex;
+    min-height: 4.5rem;
+    align-items: center;
+}
+
+.component-card-header-title {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-left: 1.25rem;
+    word-break: break-word;
+    margin-right: 1rem;
+}
+
+.component-card-header-left + .component-card-header-title {
+    margin-left: 0;
+}
+
+.component-card-header-right {
+    min-width: 2rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+.component-card-header-right:last-of-type {
+    margin-right: 1.25rem;
+}
+
+.component-card-header-left {
+    min-width: 4.5rem;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-card-header-title > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0.25rem;
+    padding: 0;
+}
+
+.component-card-header-title > span {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-top: 0.25rem;
+    /*color: #909090;*/
+}
+
+.component-card-lightColor > .component-card-header > .component-card-header-title >  span {
+    color: #909090;
+
+}
+.component-card-darkColor > .component-card-header > .component-card-header-title >  span {
+    color: #f0f0f0;
+
+}
+
+.component-card-body > div > .component-card:first-child {
+    margin-top: 0 !important;
+}
+
+.component-card-body > div > .component-card:last-child {
+    margin-bottom: 0 !important;
+}
+
+.component-card-body > div {
+    padding-bottom: 0.5rem;
+}
+
+.component-card-body {
+    color: black;
+}
+
+.component-card-stackable {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-top: none;
+}
+
+.component-card-stackable:last-of-type {
+    margin-bottom: 0.5rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+:not(.component-card-stackable) + .component-card-stackable,
+.component-card-stackable:first-of-type {
+    margin-top: 0.5rem;
+    border-top: 0.03rem solid rgba(112, 112, 112, 0.5);
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.component-card-middle {
+    display: flex;
+    min-height: 4.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-card-dimmed > .component-card-header > .component-card-header-title {
+    opacity: 0.5;
+}
+
+.component-card-dimmed > .component-card-header > .component-card-header-title > h3 * {
+    text-decoration: line-through;
+}
+
+.component-card-header-title input {
+    padding-left: 0;
+}
+
+.component-card-pinned {
+    position: absolute;
+    right: 0.75rem;
+    top: -0.4rem;
+}
+
+
+@-webkit-keyframes component-card-rise {
+    from {
+        -webkit-transform: translateY(5vh);
+                transform: translateY(5vh);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes component-card-rise {
+    from {
+        -webkit-transform: translateY(5vh);
+                transform: translateY(5vh);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.component-timer-hide {
+    transition: all 0.5s;
+    opacity: 1;
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+}
+
+.component-timer-show {
+    -webkit-animation: component-timer-show-anim 0.5s;
+            animation: component-timer-show-anim 0.5s;
+}
+
+@-webkit-keyframes component-timer-show-anim {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotateY(-90deg);
+                transform: rotateY(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+}
+
+@keyframes component-timer-show-anim {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotateY(-90deg);
+                transform: rotateY(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+}
+
+.component-Attribute {
+    width: calc(100% - 1.5rem);
+    font-family: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 0.5rem;
+    margin: 1.75rem 0rem;
+    max-width: none;
+}
+
+.component-Attribute-title,
+.component-Attribute-right {
+    min-width: 3rem;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
+
+.component-Attribute-title {
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+    justify-content: left;
+    font-weight: 300;
+    min-width: 5rem;
+    align-self: center;
+}
+
+.component-Attribute-middle {
+    flex-grow: 1;
+    min-width: 3rem;
+    display: flex;
+    align-items: top;
+    justify-content: right;
+    text-align: right;
+}
+
+.component-Attribute-right > * {
+    margin: 0;
+}
+
+
+.component-Attribute-right {
+    margin-left: auto;
+    align-self: center;
+}
+
+.component-Attribute-middle {
+    align-self: center;
+}
+
+.component-Attribute + .component-card {
+    margin-top: -1.4rem;
+}
+
+.component-button {
+    display: inline-flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 3rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+
+    border: none;
+    border-radius: 0.75rem;
+    min-height: 2.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    max-width: none;
+    background: rgba(230, 230, 230, 0.64);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-button {
+        max-width: calc(480px - 1rem) !important;
+    }
+    .component-button-viewSection {
+        max-width: calc(360px - 1rem) !important;
+        margin: 2rem  calc(calc(100% - calc(360px - 1rem)) / 2) !important;
+    }
+}
+
+.component-button-viewSection {
+    display: inline-flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100% - 6rem);
+    margin: 2rem 3rem;
+
+    border: none;
+    border-radius: 0.75rem;
+    min-height: 2.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    max-width: none;
+    background: rgba(230, 230, 230, 0.64);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    -webkit-animation: component-button-rise 1s;
+            animation: component-button-rise 1s;
+}
+
+.component-button>.material-symbols-rounded {
+    margin: 0 -0.25rem;
+}
+
+.component-button>:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+@-webkit-keyframes component-button-rise {
+    from {
+        -webkit-transform: translateY(5vh);
+                transform: translateY(5vh);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes component-button-rise {
+    from {
+        -webkit-transform: translateY(5vh);
+                transform: translateY(5vh);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.component-expandedCard {
+    border: 0.03rem solid rgba(112, 112, 112, 0.5);
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    min-height: 4.5rem;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    font-family: inherit;
+    max-width: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*fix scrollbar behind sticky elements*/
+    -webkit-transform: translateZ(0);
+}
+
+.component-expandedCard.component-expandedCard-plain {
+    background: #FFFFFF;
+    padding-bottom: 0.8rem;
+    box-shadow: 0 -0.2rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+
+.component-expandedCard.component-expandedCard-glass {
+    margin: 0.5rem;
+    width: auto;
+    height: auto;
+    background: rgba(239, 239, 239, 0.32);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    border-radius: 1rem;
+    box-shadow: 0rem 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    max-height: 100vh;
+
+}
+
+.component-expandedCard-header {
+    display: flex;
+}
+
+.component-expandedCard-header-title {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-left: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.component-expandedCard-header-left + .component-expandedCard-header-title {
+    margin-left: 0;
+}
+
+.component-expandedCard-header-right {
+    margin-left: auto;
+}
+
+.component-expandedCard-header-left,
+.component-expandedCard-header-right {
+    min-width: 4.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.4rem;
+}
+
+.component-expandedCard-header-title > h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 0.25rem;
+    padding: 0;
+}
+
+.component-expandedCard-header-title > span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+.component-expandedCard-body > .component-expandedCard {
+    margin-top: 0 !important;
+}
+
+.component-expandedCard-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    opacity: 100%;
+    z-index: 1;
+}
+
+.component-expandedCard-bottom {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 0 0 1rem 1rem;
+    border-bottom: 0.03rem solid rgba(112, 112, 112, 0.5);
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.20);
+    align-items: center;
+}
+
+.component-expandedCard.component-expandedCard-glass .component-expandedCard-bottom {
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.component-expandedCard-header-title input {
+    padding-left: 0;
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-expandedCard {
+        max-width: calc(800px - 1rem);
+        margin: 0.5rem auto;
+        height: auto;
+        border-radius: 1rem;
+        box-shadow: 0rem 0rem 0.6rem rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .component-expandedCard-bottom {
+        border-radius: 0;
+        border-bottom: none;
+        box-shadow: none;
+    }
+}
+
+.component-blurredOverlay-popup {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(239, 239, 239, 0.64);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 100;
+}
+
+.component-blurredOverlay-fullscreenConfirmation {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.64);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: auto;
+    z-index: 200;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.component-blurredOverlay-popup-visible > *
+{
+    -webkit-animation: component-blurredOverlay-fall 1s;
+            animation: component-blurredOverlay-fall 1s;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-visible > *
+{
+    -webkit-animation: component-blurredOverlay-rise 1s;
+            animation: component-blurredOverlay-rise 1s;
+}
+
+.component-blurredOverlay-popup-visible {
+    -webkit-animation: component-blurredOverlay-fade-in 1s;
+            animation: component-blurredOverlay-fade-in 1s;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-visible {
+    -webkit-animation: component-blurredOverlay-fade-in 1s;
+            animation: component-blurredOverlay-fade-in 1s;
+}
+
+.component-blurredOverlay-popup-hidden {
+    animation: component-blurredOverlay-fade-in 1s reverse;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-hidden {
+    animation: component-blurredOverlay-fade-in 1s reverse;
+}
+
+.component-blurredOverlay-popup-hidden > *
+{
+    animation: component-blurredOverlay-fall 1s reverse;
+}
+
+.component-blurredOverlay-fullscreenConfirmation-hidden > *
+{
+    animation: component-blurredOverlay-rise 1s reverse;
+}
+
+@-webkit-keyframes component-blurredOverlay-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes component-blurredOverlay-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes component-blurredOverlay-fall {
+    from {
+        -webkit-transform: translateY(-100vh);
+                transform: translateY(-100vh);
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+@keyframes component-blurredOverlay-fall {
+    from {
+        -webkit-transform: translateY(-100vh);
+                transform: translateY(-100vh);
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes component-blurredOverlay-rise {
+    from {
+        -webkit-transform: translateY(100vh);
+                transform: translateY(100vh);
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+@keyframes component-blurredOverlay-rise {
+    from {
+        -webkit-transform: translateY(100vh);
+                transform: translateY(100vh);
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+.component-deleteConfirmationBanner {
+ font-size: 1rem;
+ color: white;
+ text-align: center;
+ margin-bottom: 1rem;
+ white-space: pre-wrap;
+ z-index: 250;
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-deleteConfirmationBanner {
+        max-width: calc(480px - 1rem) !important;
+        margin: 2rem calc(calc(100% - calc(480px - 1rem)) / 2) !important;
+    }
+}
+
+/*
+Se aplica el estilo de NoteDetail/style.css
+*/
+.fullPage {
+
+}
+
+.component-fab {
+    display: inline-flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 3rem;
+    height: 3rem;
+
+    border: none;
+    border-radius: 0.75rem;
+
+    background-color: #FFF2DF;
+
+    -webkit-filter: drop-shadow(0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.25));
+
+            filter: drop-shadow(0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.25));
+
+    padding: 0 1rem;
+
+    color: black;
+    font-size: 1rem;
+
+    position: fixed;
+    bottom: max(calc(var(--bottom-offset) + var(--offset)), 1rem);
+    right: 1rem;
+}
+
+@media (min-width: 1200px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-fab {
+        bottom: auto;
+        top: calc(4rem + var(--offset));
+        right: auto;
+        left: calc(50% - 400px - 0.5rem - 3rem);
+    }
+    .component-fab-small {
+        bottom: auto;
+        top: calc(1rem + var(--offset));
+    }
+    .component-composedFAB-container {
+        bottom: auto !important;
+        top: calc(4rem + var(--offset));
+        right: calc(50% + 400px + 0.5rem - 1rem) !important;
+        -webkit-transform-origin: top right !important;
+                transform-origin: top right !important;
+    }
+}
+
+.component-fab-small {
+    display: inline-flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 2.5rem;
+    height: 2.5rem;
+
+    border: none;
+    border-radius: 0.75rem;
+
+
+    color: black;
+    font-size: 1rem;
+    background-color: #FFF2DF;
+
+    -webkit-filter: drop-shadow(0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.25));
+
+            filter: drop-shadow(0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.25));
+
+    padding: 0 0.75rem;
+
+    position: fixed;
+    bottom: calc(var(--bottom-offset) + var(--offset));
+    right: 1rem;
+}
+
+.component-fab>.material-symbols-rounded,
+.component-fab-small>.material-symbols-rounded {
+    margin: 0 -0.25rem;
+}
+
+.component-fab>:not(:last-child),
+.component-fab-small>:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.component-composedFAB-container {
+    position: relative;
+    position: fixed;
+    bottom: max(calc(var(--bottom-offset) + var(--offset) + 1rem), 4rem);
+    right: 0;
+    transition: 0.3s all ease-in-out;
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+}
+
+.component-fab-blankspace {
+    width: 100%;
+    height: 4.5rem;
+}
+
+.component-navBar {
+    position: fixed;
+    bottom: 0;
+
+    width: calc(100% - 1rem);
+    min-height: 4rem;
+    display: block;
+    font-family: inherit;
+    padding: 0 0.5rem;
+    margin: 0;
+
+    border-top: 0.03rem solid rgba(112, 112, 112, 0.5);
+    background: rgba(239, 239, 239, 0.32);
+    -webkit-backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.2rem);
+}
+
+.component-navBar > ul {
+    width: 100%;
+    min-height: 4rem;
+    display: flex;
+    flex-direction: row;
+    font-family: inherit;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.component-navBar-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+.component-navBar-tab-active {
+    opacity: 1;
+}
+
+.blankSpace {
+    min-height: 4rem;
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 1600px goes here
+    padding: 0 calc((100vw -16000px)/2);*/
+    .component-navBar {
+        max-width: 800px;
+        padding: 0 calc((100% - 800px) / 2);
+    }
+}
+
+.component-calendar {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.component-calendar::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.component-calendar-day{
+    box-sizing: border-box;
+    width: calc(100%/7);
+    float: left;
+    text-align: center;
+    height: 3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0 calc(100%/14 - 2.5rem/2);
+}
+
+.component-calendar-weekDay{
+    width: calc(100%/7);
+    float: left;
+    text-align: center;
+    height: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.component-calendar-today{
+    font-weight: 700;
+}
+
+.component-calendar-block{
+    line-height: 1%;
+}
+
+
+.errorMessage {
+    font-size: 0.9rem;
+    color: #ff3b30;
+    text-align: center;
+}
+
+.sizeLimitter {
+    min-width: 360px;
+    width: 480px;
+    margin: 1rem;
+}
+
+.component-GroupEditor-Popup {
+    z-index: 150;
+}
+
+.component-groupDetail {
+    /*animation: component-groupDetail-slide 1s;*/
+}
+
+.emptyGroupMessage {
+    text-align: center;
+    max-width: calc(100% - 2rem);
+    margin: 1rem;
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+@-webkit-keyframes component-groupDetail-slide {
+    from {
+        -webkit-transform: translateX(100vw);
+                transform: translateX(100vw);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+@keyframes component-groupDetail-slide {
+    from {
+        -webkit-transform: translateX(100vw);
+                transform: translateX(100vw);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+.statsSizeLimitter {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    /* CSS that should be displayed if width is equal to or more than 800px goes here*/
+    .statsSizeLimitter {
+        max-width: calc(800px - 1rem);
+        margin: 0.5rem auto;
+    }
+}
+
+.component-StatsViewer-Popup {
+    z-index: 150;
+}
+
+.emptyHomeMessage {
+    text-align: center;
+    max-width: calc(100% - 2rem);
+    margin: 1rem;
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+.errorMessage {
+    font-size: 0.9rem;
+    color: #ff3b30;
+    text-align: center;
+}
+
+.sizeLimitter {
+    min-width: 360px;
+    width: 480px;
+}
+
+.component-PasswordRecover-Popup {
+    z-index: 150;
+}
+
+.fullPage {
+    -webkit-animation: component-fullPage-rise 0.5s;
+            animation: component-fullPage-rise 0.5s;
+}
+
+@-webkit-keyframes component-fullPage-rise {
+    from {
+        -webkit-transform: translateY(50vh);
+                transform: translateY(50vh);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes component-fullPage-rise {
+    from {
+        -webkit-transform: translateY(50vh);
+                transform: translateY(50vh);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*
+Se aplica el estilo de NoteDetail/style.css
+*/
+.fullPage {
+
+}
+
+.errorMessage {
+    font-size: 0.9rem;
+    color: #ff3b30;
+    text-align: center;
+}
+
+.sizeLimitter {
+    min-width: 360px;
+    width: 480px;
+}
+
+.component-PasswordEditor-Popup {
+    z-index: 150;
+}
+
+.emptySearchMessage {
+    text-align: center;
+    max-width: calc(100% - 2rem);
+    margin: 1rem;
+    opacity: 0.5;
+    font-weight: 300;
+}
+
+/*
+Se aplica el estilo de NoteDetail/style.css
+*/
+.fullPage {
+
+}
+
+
+/*# sourceMappingURL=main.6935c899.css.map*/
