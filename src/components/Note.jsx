@@ -201,7 +201,7 @@ function formatDate(timestamp) {
         if (today.getMonth() === date.getMonth() && today.getDate() === date.getDate()) {
             return 'Hoy a las ' + date.getHours().toString().padStart(2, '0') + ':' + date.getMinutes().toString().padStart(2, '0') + ' ';
         }
-        if (today.getMonth() === date.getMonth() && today.getDate() + 1 === date.getDatet()) {
+        if (today.getMonth() === date.getMonth() && today.getDate() + 1 === date.getDate()) {
             return 'Mañana a las ' + date.getHours().toString().padStart(2, '0') + ':' + date.getMinutes().toString().padStart(2, '0') + ' ';
         }
         return date.getDate() + ' de ' + months[date.getMonth()] + ' ';
